@@ -1,0 +1,23 @@
+body {
+  font-family: 'Abril Fatface', cursive;
+  background-color: #1F143B;
+}
+
+.title {
+  color: #A27F70;
+  font-size: 10rem;
+  text-align: center;
+  margin-top: 20rem;
+}
+
+h1 {
+  color: #A27F70;
+  text-align: center;
+}
+
+.arrow {
+  color: #A27F70;
+  margin: 0 48vw;
+  padding-top: 20px;
+  font-size: 6rem;
+}
