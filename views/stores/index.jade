@@ -5,5 +5,7 @@ block content
   if stores 
     for store in stores 
       div.well.storeContainer
-        h3= store.name
-        img.img-responsive.storeImg(src=''+store.image+'')
+        h3.text-center= store.name
+        .borderRadius
+          a(href='/stores/'+store.id)
+            img.img-responsive.storeImg(src=''+store.image+'')

@@ -1,0 +1,12 @@
+extends ../layout
+  
+block content 
+  if stores
+    div.showBox
+      div.col-sm-6
+        img.img-responsive.imgShow(src='../'+stores.image+'')
+      div.col-sm-6
+        h1= stores.name
+        em 
+          h4.reg.text-center.showCopy= stores.street1 + ' ' + stores.city + ' ' + stores.state 
+        h4.reg.showCopy= stores.bio
