@@ -1,7 +1,9 @@
-extends ../layout 
+extends ../layout
 
 block content
-  h1.title Vintage Denver
-  h1 find vintage clothing stores in denver
-  a(href='/stores')
-    span.arrow.glyphicon.glyphicon-menu-right  
+  h1 Stores
+  if stores 
+    for store in stores 
+      div.well.storeContainer
+        h3= store.name
+        img.img-responsive.storeImg(src=''+store.image+'')

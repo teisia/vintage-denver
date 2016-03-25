@@ -21,3 +21,19 @@ h1 {
   padding-top: 20px;
   font-size: 6rem;
 }
+
+.storeContainer {
+  color: #1F143B;
+}
+
+.storeImg {
+  height: 300px;
+  width: 400px;
+}
+
+.well {
+  background-color: #A27F70;
+  border: none;
+  margin: 5rem;
+  border-radius: 7px;
+}
