@@ -85,10 +85,36 @@ img {
   padding: 3rem;
 }
 
+form {
+  font-family: sans-serif;
+  width: 50%;
+  margin: 0 auto;
+  background-color: #A27F70;
+  padding: 3rem;
+  border-radius: 9px;
+}
+
+form button {
+  width: 100%;
+  margin-top: 1rem;
+  background-color: #9ED7C7;
+  color: #1F143B;
+}
+
+input {
+  margin-top: .5rem;
+}
+
+select {
+  margin-top: .5rem;
+}
 
 @media screen and (max-width:48em) {
   .well {
     width: 85%;
+  }
+  form {
+    width: 80%;
   }
 }
 
@@ -98,5 +124,8 @@ img {
   and (-webkit-min-device-pixel-ratio: 2) {
   .well {
     width: 85%;
+  }
+  form {
+    width: 80%;
   }
 }

@@ -20,3 +20,29 @@ block content
              span.sr-only (current)
          li
            a(href='/stores/new') Add New Store
+  h1 New Store
+  .form
+    form(method='post' action='/stores')
+      fieldset.form-group
+        input.form-control(type='text' name='name' placeholder='Store Name')
+      fieldset.form-group
+        input.form-control(type='text' name='street1' placeholder='Address')
+      fieldset.form-group
+        select.form-control(name='neighborhood_id')
+          option(selected) Select Neighborhood
+          option(value='1') Capitol Hill
+          option(value='2') Baker
+          option(value='3') Highlands
+      fieldset.form-group
+        input.form-control(type='text' name='city' value='Denver' disabled)
+      fieldset.form-group
+        input.form-control(type='text' name='state' value='CO' disabled)
+      fieldset.form-group
+        input.form-control(type='text' name='zip' placeholder='Zipcode')
+      fieldset.form-group
+        input.form-control(type='text' name='bio' placeholder='Short Description')
+      fieldset.form-group
+        input.form-control(type='text' name='image' placeholder='Image URL')
+      fieldset.form-group
+        input.form-control(type='url' name='site' placeholder='Store Website')
+      button.btn(type='submit') Submit
