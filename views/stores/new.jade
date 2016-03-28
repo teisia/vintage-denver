@@ -1,6 +1,6 @@
 extends ../layout
   
-block content
+block content 
   nav.navbar
    .container-fluid
      // Brand and toggle get grouped for better mobile display
@@ -19,13 +19,4 @@ block content
              | Stores
              span.sr-only (current)
          li
-           a(href='/stores/new') Add New Store 
-  if stores
-    div.showBox
-      div.col-sm-6
-        img.img-responsive.imgShow(src='../'+stores.image+'')
-      div.col-sm-6
-        h2= stores.name
-        em 
-          h4.reg.showCopy= stores.street1 + ' ' + stores.city + ' ' + stores.state 
-        h4.reg.showCopy= stores.bio
+           a(href='/stores/new') Add New Store

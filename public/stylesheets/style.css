@@ -19,11 +19,28 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  color: #A27F70;
+}
+
 .arrow {
   color: #A27F70;
   margin: 0 48vw;
   padding-top: 20px;
   font-size: 6rem;
+}
+
+.navbar {
+  background-color: #A27F70;
+  border: none;
+}
+
+.navbar a {
+  color: #1F143B;
+}
+
+.navbar-toggle {
+  background-color: #1F143B;
 }
 
 .storeContainer {
