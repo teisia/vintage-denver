@@ -7,6 +7,10 @@ function stores() {
   return knex('stores');
 };
 
+function neighborhoods() {
+  return knex('neighborhoods');
+};
+
 router.get('/', function(req, res, next) {
   stores().select().then(function(result) {
    res.render('stores/index', {stores: result});
@@ -39,6 +43,24 @@ router.post('/', function(req, res) {
 router.get('/:id', function(req, res) {
   stores().where('id', req.params.id).first().then(function(result) {
     res.render('stores/show', {stores: result});
+  })
+});
+
+router.get('/:id/edit', function(req, res) {
+  stores().where('id', req.params.id).first().then(function(result) {
+    res.render('stores/edit', {stores: result});
+  })
+});
+
+router.post('/:id', function(req, res) {
+  stores().where('id', req.params.id).update(req.body).then(function(result) {
+    res.redirect('/stores');
+  })
+});
+
+router.get('/:id/delete', function(req, res) {
+  stores().where('id', req.params.id).del().then(function(result) {
+    res.redirect('/stores');
   })
 });
 

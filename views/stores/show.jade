@@ -29,3 +29,6 @@ block content
         em 
           h4.reg.showCopy= stores.street1 + ' ' + stores.city + ' ' + stores.state 
         h4.reg.showCopy= stores.bio
+        .buttons
+          button.btn.editButton(type='edit'): a(href='/stores/'+stores.id+'/edit') Edit
+          button.btn.deleteButton(type='delete'): a(href='/stores/'+stores.id+'/delete') Delete

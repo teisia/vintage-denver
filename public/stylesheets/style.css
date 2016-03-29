@@ -113,6 +113,27 @@ select {
   color: #9ED7C7;
 }
 
+button a {
+  color: #1F143B;
+}
+
+.buttons {
+  margin-top: 4rem;
+}
+
+.deleteButton {
+  width: 30%;
+  font-family: Arial;
+  background-color: #9ED7C7;
+}
+
+.editButton {
+  margin-right: 2.5rem;
+  width: 30%;
+  font-family: Arial;
+  background-color: #9ED7C7;
+}
+
 @media screen and (max-width:48em) {
   .well {
     width: 85%;
