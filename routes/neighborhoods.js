@@ -20,7 +20,9 @@ router.get('/', function(req, res) {
 
 router.get('/:id', function(req, res) {
   neighborhoods().where('id', req.params.id).first().then(function(result) {
-    res.render('neighborhoods/show', {neighborhoods: result});
+    stores().where('neighborhood_id', req.params.id).then(function(result2) {
+      res.render('neighborhoods/show', {neighborhoods: result, stores: result2});
+    })
   })
 })
 

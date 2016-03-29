@@ -154,6 +154,23 @@ button a {
   color: #A27F70;
 }
 
+.indvMap .maps {
+  margin: 4rem auto;
+}
+
+.indvMap div {
+  border-radius: 20px;
+}
+
+.neighborhoodShowText {
+  margin: 4rem auto;
+}
+
+.indvMap a {
+  color: #A27F70;
+  font-family: Arial;
+}
+
 @media screen and (max-width:48em) {
   .well {
     width: 85%;

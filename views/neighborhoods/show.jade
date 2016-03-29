@@ -22,3 +22,20 @@ block content
              a(href='/stores/new') Add New Store
            li
              a(href='/neighborhoods') Neighborhoods
+    h1 #{neighborhoods.name}
+    br
+    div.indvMap
+      div(id='map#{neighborhoods.id}' class='maps')
+      script.
+       var map#{neighborhoods.id};
+       function initMap#{neighborhoods.id}() {
+         map#{neighborhoods.id} = new google.maps.Map(document.getElementById('map#{neighborhoods.id}'), {
+           center:  {lat: #{neighborhoods.latitude}, lng: #{neighborhoods.longitude}},
+           zoom: 14
+         });
+       }    
+      script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_AEJoor25uoZy70X3iaMELWOJe14n8HE&callback=initMap#{neighborhoods.id}")
+      if stores 
+        for store in stores 
+          h4
+            a(href='/stores/'+store.id+'')= store.name
