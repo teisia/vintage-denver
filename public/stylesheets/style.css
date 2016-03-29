@@ -52,15 +52,14 @@ h2 {
   width: 400px;
   margin: 0 auto;
   padding: 1rem;
+  border-radius: 20px;
+  -webkit-filter: sepia(90%);
 }
 
 .imgShow {
   height: 300px;
   width: 400px;
   margin: 0 auto;
-}
-
-img {
   border-radius: 20px;
   -webkit-filter: sepia(90%);
 }
@@ -132,6 +131,27 @@ button a {
   width: 30%;
   font-family: Arial;
   background-color: #9ED7C7;
+}
+
+.maps {
+  height: 300px;
+  width: 300px;
+}
+
+.allMaps div {
+  border-radius: 20px;
+}
+
+.allMaps {
+  height: 300px;
+  width: 300px;
+  text-align:center;
+  float:left;
+  margin: 50px 30px;
+}
+
+.allMaps a {
+  color: #A27F70;
 }
 
 @media screen and (max-width:48em) {

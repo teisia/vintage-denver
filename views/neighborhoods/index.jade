@@ -1,0 +1,40 @@
+extends ../layout
+
+block content
+  nav.navbar
+     .container-fluid
+       // Brand and toggle get grouped for better mobile display
+       .navbar-header
+         button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1', aria-expanded='false')
+           span.sr-only Toggle navigation
+           span.icon-bar
+           span.icon-bar
+           span.icon-bar
+         a.navbar-brand(href='/') Vintage Denver
+       // Collect the nav links, forms, and other content for toggling
+       #bs-example-navbar-collapse-1.collapse.navbar-collapse
+         ul.nav.navbar-nav
+           li.active
+             a(href='/stores')
+               | Stores
+               span.sr-only (current)
+           li
+             a(href='/stores/new') Add New Store
+           li
+             a(href='/neighborhoods') Neighborhoods
+  h1 Neighborhoods
+  if neighborhoods
+    for neighborhood in neighborhoods
+      div(class="allMaps")
+        h3: a(href='/neighborhoods/'+neighborhood.id+'')= neighborhood.name
+        div(id='map#{neighborhood.id}' class='maps')
+      script.
+        var map#{neighborhood.id};
+        function initMap#{neighborhood.id}() {
+          map#{neighborhood.id} = new google.maps.Map(document.getElementById('map#{neighborhood.id}'), {
+            center: {lat: #{neighborhood.latitude}, lng: #{neighborhood.longitude}},
+            zoom: 14
+          });
+        }
+        
+      script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_AEJoor25uoZy70X3iaMELWOJe14n8HE&callback=initMap#{neighborhood.id}")
