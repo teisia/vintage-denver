@@ -22,6 +22,8 @@ block content
            a(href='/stores/new') Add New Store
   h1 New Store
   .form
+    include ../includes/errors.jade
+    br
     form(method='post' action='/stores')
       fieldset.form-group
         input.form-control(type='text' name='name' placeholder='Store Name')

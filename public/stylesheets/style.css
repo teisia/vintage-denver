@@ -85,7 +85,7 @@ img {
   padding: 3rem;
 }
 
-form {
+.form {
   font-family: sans-serif;
   width: 50%;
   margin: 0 auto;
@@ -94,7 +94,7 @@ form {
   border-radius: 9px;
 }
 
-form button {
+.form button {
   width: 100%;
   margin-top: 1rem;
   background-color: #9ED7C7;
@@ -109,11 +109,15 @@ select {
   margin-top: .5rem;
 }
 
+.errors {
+  color: #9ED7C7;
+}
+
 @media screen and (max-width:48em) {
   .well {
     width: 85%;
   }
-  form {
+  .form {
     width: 80%;
   }
 }
@@ -125,7 +129,7 @@ select {
   .well {
     width: 85%;
   }
-  form {
+  .form {
     width: 80%;
   }
 }
