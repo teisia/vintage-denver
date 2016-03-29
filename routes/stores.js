@@ -42,13 +42,21 @@ router.post('/', function(req, res) {
 
 router.get('/:id', function(req, res) {
   stores().where('id', req.params.id).first().then(function(result) {
-    res.render('stores/show', {stores: result});
+    stores().where('neighborhood_id', result.neighborhood_id).first().then(function(result2) {
+      neighborhoods().where('id', result.neighborhood_id).first().then(function(result3) {
+        res.render('stores/show', {stores: result, neighborhoods: result3});
+      })
+    })
   })
 });
 
 router.get('/:id/edit', function(req, res) {
   stores().where('id', req.params.id).first().then(function(result) {
-    res.render('stores/edit', {stores: result});
+    stores().where('neighborhood_id', result.neighborhood_id).first().then(function(result2) {
+      neighborhoods().where('id', result.neighborhood_id).first().then(function(result3) {
+        res.render('stores/edit', {stores: result, neighborhoods: result3});
+      })
+    })
   })
 });
 

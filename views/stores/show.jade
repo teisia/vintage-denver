@@ -20,14 +20,17 @@ block content
              span.sr-only (current)
          li
            a(href='/stores/new') Add New Store 
+         li
+           a(href='/neighborhoods') Neighborhoods
   if stores
+  if neighborhoods
     div.showBox
       div.col-sm-6
         img.img-responsive.imgShow(src='../'+stores.image+'')
       div.col-sm-6
         h2= stores.name
         em 
-          h4.reg.showCopy= stores.street1 + ' ' + stores.city + ' ' + stores.state 
+          h4.reg.showCopy= neighborhoods.name + ' - ' + stores.street1 + ' ' + stores.city + ' ' + stores.state 
         h4.reg.showCopy= stores.bio
         .buttons
           button.btn.editButton(type='edit'): a(href='/stores/'+stores.id+'/edit') Edit

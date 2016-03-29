@@ -2,6 +2,7 @@ extends ../layout
   
 block content 
   if stores
+  if neighborhoods
   nav.navbar
    .container-fluid
      // Brand and toggle get grouped for better mobile display
@@ -21,6 +22,8 @@ block content
              span.sr-only (current)
          li
            a(href='/stores/new') Add New Store
+         li
+           a(href='/neighborhoods') Neighborhoods
   h1 Edit Store
   .form
     include ../includes/errors.jade
@@ -31,7 +34,7 @@ block content
         input.form-control(type='text' name='street1' value=stores.street1)
       fieldset.form-group
         select.form-control(name='neighborhood_id')
-          option Select Neighborhood
+          option= neighborhoods.name
           option(value='1') Capitol Hill
           option(value='2') Baker
           option(value='3') Highlands
