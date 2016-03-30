@@ -108,6 +108,15 @@ select {
   margin-top: .5rem;
 }
 
+.radioButtons input {
+  margin: .5rem;
+  font-size: 3rem;
+}
+
+label {
+  color: #1F143B;
+}
+
 .errors {
   color: #9ED7C7;
 }
