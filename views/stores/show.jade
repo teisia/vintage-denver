@@ -24,6 +24,7 @@ block content
            a(href='/neighborhoods') Neighborhoods
   if stores
   if neighborhoods
+  if reviews
     div.showBox
       div.col-sm-6
         img.img-responsive.imgShow(src='../'+stores.image+'')
@@ -35,3 +36,47 @@ block content
         .buttons
           button.btn.editButton(type='edit'): a(href='/stores/'+stores.id+'/edit') Edit
           button.btn.deleteButton(type='delete'): a(href='/stores/'+stores.id+'/delete') Delete
+        .reviewBox
+          h3 Reviews
+          for review in reviews
+            table.table-responsive.review
+              thead
+                th Name 
+                th Date 
+                th Review
+                th Rating 
+                tr
+                  td= review.name 
+                  td= review.date 
+                  td= review.review
+                  td.starsReview
+                   if review.rating === 1
+                     span.glyphicon.glyphicon-star
+                   else if review.rating === 2
+                     span.glyphicon.glyphicon-star
+                     span.glyphicon.glyphicon-star
+                   else if review.rating === 3
+                     span.glyphicon.glyphicon-star
+                     span.glyphicon.glyphicon-star
+                     span.glyphicon.glyphicon-star
+                   else if review.rating === 4
+                     span.glyphicon.glyphicon-star
+                     span.glyphicon.glyphicon-star
+                     span.glyphicon.glyphicon-star
+                     span.glyphicon.glyphicon-star
+                   else 
+                     span.glyphicon.glyphicon-star
+                     span.glyphicon.glyphicon-star
+                     span.glyphicon.glyphicon-star
+                     span.glyphicon.glyphicon-star
+                     span.glyphicon.glyphicon-star
+                tr
+                  td
+                    a(href='/stores/'+stores.id+'/reviews/'+review.id+'/edit') Edit
+                  td
+                    a(href='/stores/'+stores.id+'/reviews/'+review.id+'/delete') Delete
+                  td
+                  td 
+                br 
+          br 
+          button.btn.editButton: a(href='/stores/'+stores.id+'/reviews/new') Add Review

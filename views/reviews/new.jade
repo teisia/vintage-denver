@@ -25,13 +25,14 @@ block content
   h1 New Review
   .form
     include ../includes/errors.jade
-    form(method='post' action='/stores')
+    form(method='post' action='/stores/'+stores.id+'/reviews')
       fieldset.form-group
         input.form-control(type='text' name='name' placeholder='Name')
       fieldset.form-group
         input.form-control(type='text' name='date' placeholder='Date')
       fieldset.form-group
         input.form-control(type='text' name='review' placeholder='Review')
+        input(type='hidden' name='store_id' value=stores.id)
       fieldset.form-group.radioButtons
         label(for='rating') Rating:  
         input(type='radio' name='rating' value='1')

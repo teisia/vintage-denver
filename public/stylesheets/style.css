@@ -180,12 +180,71 @@ button a {
   font-family: Arial;
 }
 
+.starsHome span {
+  color: #A27F70;
+}
+
+.starsReview span {
+  color: #1F143B;
+}
+
+
+table {
+  font-family: Arial;
+  border: 1px solid #1F143B;
+}
+
+th {
+  border-bottom: 1px solid #1F143B;
+}
+
+th, td {
+  padding: 1rem 5rem 1rem 1rem;
+  width: 20%;
+}
+
+.reviewBox {
+  background-color: #A27F70;
+  padding: 1rem 2rem 2rem 2rem;
+  margin: 4rem 0;
+  border-radius: 20px;
+}
+
+.reviewBox h3 {
+  margin-bottom: 0;
+}
+
+.reviewBox h3, th, td {
+  color: #1F143B;
+}
+
+.reviewBox a {
+  font-family: Arial;
+  color: #9ED7C7;
+}
+
+.reviewBox button a {
+  color: #1F143B;
+}
+
 @media screen and (max-width:48em) {
   .well {
     width: 85%;
   }
   .form {
     width: 80%;
+  }
+  .showBox {
+    margin: 10rem auto;
+    text-align: center;
+    width: 85%;
+  }
+  table {
+    border: 1px solid #1F143B;
+  }
+  th, td {
+    padding: 1rem;
+    width: 20%;
   }
 }
 
@@ -198,5 +257,12 @@ button a {
   }
   .form {
     width: 80%;
+  }
+  table {
+    border: 1px solid #1F143B;
+  }
+  th, td {
+    padding: 1rem;
+    width: 20%;
   }
 }

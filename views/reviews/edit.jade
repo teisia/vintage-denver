@@ -1,0 +1,45 @@
+extends ../layout
+  
+block content 
+  nav.navbar
+   .container-fluid
+     // Brand and toggle get grouped for better mobile display
+     .navbar-header
+       button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1', aria-expanded='false')
+         span.sr-only Toggle navigation
+         span.icon-bar
+         span.icon-bar
+         span.icon-bar
+       a.navbar-brand(href='/') Vintage Denver
+     // Collect the nav links, forms, and other content for toggling
+     #bs-example-navbar-collapse-1.collapse.navbar-collapse
+       ul.nav.navbar-nav
+         li.active
+           a(href='/stores')
+             | Stores
+             span.sr-only (current)
+         li
+           a(href='/stores/new') Add New Store
+         li
+           a(href='/neighborhoods') Neighborhoods
+  h1 Edit Review
+  if reviews
+  if stores
+    .form
+      include ../includes/errors.jade
+      form(method='post' action='/stores/'+stores.id+'/reviews/'+reviews.id+'')
+        fieldset.form-group
+          input.form-control(type='text' name='name' value=reviews.name)
+        fieldset.form-group
+          input.form-control(type='text' name='date' value=reviews.date)
+        fieldset.form-group
+          input.form-control(type='text' name='review' value=reviews.review)
+          input(type='hidden' name='store_id' value=stores.id)
+        fieldset.form-group.radioButtons
+          label(for='rating') Rating:  
+          input(type='radio' name='rating' value='1' checked=(reviews ? (reviews.rating === 1 ? true : undefined ): undefined))
+          input(type='radio' name='rating' value='2' checked=(reviews ? (reviews.rating === 2 ? true : undefined ): undefined))
+          input(type='radio' name='rating' value='3' checked=(reviews ? (reviews.rating === 3 ? true : undefined ): undefined))
+          input(type='radio' name='rating' value='4' checked=(reviews ? (reviews.rating === 4 ? true : undefined ): undefined))
+          input(type='radio' name='rating' value='5' checked=(reviews ? (reviews.rating === 5 ? true : undefined ): undefined))
+        button.btn(type='submit') Submit
